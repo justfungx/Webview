@@ -16,6 +16,9 @@ function initMap() {
     zoom: 8
   });
 }
+function moveMap(newLat, newLng){
+    map.setCenter({lat:newLat, lng:newLng});
+}
     </script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?callback=initMap">

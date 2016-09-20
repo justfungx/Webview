@@ -5,9 +5,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
    >
-<WebView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/page2_webview"
-    />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="test"
+        android:onClick="test1"
+        />
+    <WebView
+        android:id="@+id/page2_webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
 </LinearLayout>
