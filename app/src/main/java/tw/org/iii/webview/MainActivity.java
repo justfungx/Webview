@@ -2,7 +2,9 @@ package tw.org.iii.webview;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.webkit.JavascriptInterface;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -43,9 +45,11 @@ public class MainActivity extends AppCompatActivity {
         WebSettings settings = webview.getSettings();
         settings.setJavaScriptEnabled(true);
 
+        webview.addJavascriptInterface(new MyJS(), "brad");
+
         // ********************V4*************
         webview.loadUrl("file:///android_asset/mypage.html");
-
+     //   webview.loadUrl("file:///android_asset/images/ka.gif");
         // ********************END****************************
 
 
@@ -55,7 +59,15 @@ public class MainActivity extends AppCompatActivity {
 
         //***********   END   *****     ****************
     }
-    public void b1task(View v){
+    public class MyJS {
+        @JavascriptInterface
+        public void showMesg(String webmesg){
+            Log.d("DK", webmesg);
+
+        }
+    }
+
+       public void b1task(View v){
         //doPrev();
         String name = inputName.getText().toString();
         webview.loadUrl("javascript:test2('" + name +"')");
