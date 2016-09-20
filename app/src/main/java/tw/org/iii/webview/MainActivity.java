@@ -6,11 +6,15 @@ import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private TextView mesg;
     private WebView webview;
+    private EditText inputName;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         mesg = (TextView)findViewById(R.id.mesg);
         webview = (WebView)findViewById(R.id.webview);
+        inputName = (EditText)findViewById(R.id.inputName);
         initWebView();
 //      V1_END
     }
@@ -51,10 +56,14 @@ public class MainActivity extends AppCompatActivity {
         //***********   END   *****     ****************
     }
     public void b1task(View v){
-        doPrev();
+        //doPrev();
+        String name = inputName.getText().toString();
+        webview.loadUrl("javascript:test2('" + name +"')");
     }
     public void b2task(View v){
-        doNext();
+        int x = 3,  y = 4;
+        webview.loadUrl("javascript:test3(" + x + "," + y +")");
+        //doNext();
     }
     public void b3task(View v){
         doReload();
