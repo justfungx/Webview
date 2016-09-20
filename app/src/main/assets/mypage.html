@@ -2,11 +2,24 @@
 <head>
     <h1>HEY</h1>
     <script>
-  <input button="Click ME" vale= "">
+        function  test1(){
+        var here = document.getElementById("here");
+        here.innerHTML = "Hello, Brad:" + parseInt(Math.random()*49+1);
+    }
 
+    function test2(name){
+        var here = document.getElementById("here2");
+        here.innerHTML = "Hello, " + name;
+    }
+
+    function test3(){
+    }
     </script>
-    <div>
 
-    </div>
 </head>
+<input type="button" value="Click Me" onclick="test1()" />
+
+<div id="here" />
+<div id="here2" />
+<div id= "here3" />
 </html>

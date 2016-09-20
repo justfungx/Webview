@@ -3,6 +3,7 @@ package tw.org.iii.webview;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.TextView;
@@ -32,11 +33,13 @@ public class MainActivity extends AppCompatActivity {
     private void initWebView(){
         WebViewClient client = new WebViewClient();
         webview.setWebViewClient(client);
-        webview.loadUrl("http://www.iii.org.tw");
+      //  webview.loadUrl("http://www.iii.org.tw");
 
+        WebSettings settings = webview.getSettings();
+        settings.setJavaScriptEnabled(true);
 
         // ********************V4*************
-        //webview.loadUrl("file:///android_asset/mypage.html");
+        webview.loadUrl("file:///android_asset/mypage.html");
 
         // ********************END****************************
 
