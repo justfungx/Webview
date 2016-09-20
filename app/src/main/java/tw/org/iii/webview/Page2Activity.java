@@ -101,7 +101,7 @@ public class Page2Activity extends AppCompatActivity {
 
             }
         }
-
+//
     public void test1(View v){
         webview.loadUrl("javascript:moveMap(11.146499, 122.516159)");
     }
